@@ -3,8 +3,9 @@ Tutorial: build up your match
 
 Given we are editing a csv file with a finite number of rows per line, we can do something like this ...
 
-Type: `/\(^,[^,]*,\)<cr>`
+1. Type: `/\(^,[^,]*,\)<cr>`
 ^
+
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
@@ -19,6 +20,9 @@ Type: `/\(^,[^,]*,\)<cr>`
 ,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
+
+As tyou can see this will match everything up to the second comma.
+^
 
 To analyse this regex, follow the steps with the arrow key: <Right> but dont type the examples in to vim ( until the end at least ).
 ^
@@ -48,7 +52,7 @@ To analyse this regex, follow the steps with the arrow key: <Right> but dont typ
 ====================================================
 
 ===========================================================================================================
-4) We create our character range ( everything within the `[]` ) to match everything, excluding commas ;)
+4) We create our character range ( everything within the `[]` ) to match everything, excluding commas `[^,]` ;)
 
 `/\(^,[^,]*,\)`
       ^

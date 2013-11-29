@@ -17,10 +17,12 @@ build/transforms/replace/basic-search.exe|9 col 5|%m
 build/transforms/replace/basic-search.exe|10 col 16|%m
 build/transforms/replace/basic-search.exe|11 col 5|%m
 build/transforms/replace/basic-search.exe|12 col 12|%m
-build/transforms/replace/building-matches.tut|9 col 1|%m
-build/transforms/replace/building-matches.tut|26 col 1|%m
-build/transforms/replace/building-matches.tut|45 col 1|%m
-build/transforms/replace/building-matches.tut|47 col 1|%m
+build/transforms/replace/building-matches.tut|11 col 1|%m
+build/transforms/replace/building-matches.tut|25 col 1|%m
+build/transforms/replace/building-matches.tut|44 col 1|%m
+build/transforms/replace/building-matches.tut|46 col 1|%m
+build/transforms/replace/building-matches.tut|48 col 1|%m
+build/transforms/replace/building-matches.tut|65 col 1|%m
 build/transforms/replace/building-matches.tut1|6 col 1|%m
 build/transforms/replace/building-matches.tut1|22 col 1|%m
 build/transforms/replace/building-matches.tut1|27 col 3|%m
