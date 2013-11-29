@@ -4,7 +4,9 @@ Tutorial: building matches
 These can be specialized for your particular needs
 
 So first we start to build up our match...
-Type: `/[a-zA-Z0-9]` and press return
+
+1. Type: `/[a-zA-Z0-9]` and press return
+^
 
 You should see that pretty much eery word is now highlighted.
 
