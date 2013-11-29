@@ -10,7 +10,7 @@ class KataPage
     @keeplines, @addresses = [], []
     @contents = File.open(source, 'r').map { |line| line }
     @contents.each do |line|
-      if line =~ /\^/
+      if ( line =~ /\^/ ) && ( line !~ /`/ ) # && ( line =~ /\\\^/ )
         @addresses << KataAddress.new(
           :filename   => @destination,
           :linenumber => @keeplines.size,

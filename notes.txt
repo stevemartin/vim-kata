@@ -1,0 +1,9 @@
+output to a file.
+interactive sr ( checking ).
+improvements to the regex.
+explain why we're using groups.
+find out square braces name, work out negation.
+Use negation [^,]* to make the regex more concise.
+How to traverse previous commands
+
+<Shift> H M L

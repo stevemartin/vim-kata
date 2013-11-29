@@ -1,0 +1,9 @@
+Rudiments of Vim: text search
+^
+---------------------------------------------------
+
+Instructions:
+1) anything in backticks: `is an expression` ... that can be executed in vim.
+2) The arrow keys have been modified for navigation through the tutorial, you will need to use the home row ( hjkl ) to navigate the text.
+3) <cr> indicates pressing *carriage return* aka *Enter*.
+3) <esc> indicates pressing Escape.
