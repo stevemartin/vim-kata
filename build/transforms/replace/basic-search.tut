@@ -1,6 +1,5 @@
 Tutorial: searching text with `/`
 ==========================================
-# Remember! don't type the backtics ```````` !!! They indicate what you can type in vim.
 
 1. Press `/` to enter search mode and type `Roses` and press enter
 

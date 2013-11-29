@@ -5,12 +5,11 @@ These can be specialized for your particular needs
 
 ==========================================
 So first we start to build up our match...
+Remember! <cr> indicates a carriage return, aka literally pressing ENTER.
+Likewise with <Esc> for escape, <Ctrl> for control, <Space> for space and so on.
 
 1. Type: `/[a-zA-Z0-9]<cr>`
 ^
-
-Remember! <cr> indicates a carriage return aka literally pressing ENTER.
-Likewise with <Esc> for escape, <Ctrl> for control, <Space> for space and so on.
 
 =========================================
 

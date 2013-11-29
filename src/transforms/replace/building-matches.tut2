@@ -1,7 +1,7 @@
 Tutorial: continue building up your match with groups
 -----------------------------------------------------
 
-We also know that we want to extract the email addresses from the csv, so we can construct a match, partly based on our previous matches
+We also know that we want to extract the email addresses from the csv, so we can construct a match, partly based on our previous matches.
 
 Type: `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)`
 ^

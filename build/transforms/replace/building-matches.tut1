@@ -3,7 +3,7 @@ Tutorial: build up your match
 
 Given we are editing a csv file with a finite number of rows per line, we can do something like this ...
 
-Type: `/\(^,[^,]*,\)` and press return
+Type: `/\(^,[^,]*,\)<cr>`
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
@@ -19,7 +19,7 @@ Type: `/\(^,[^,]*,\)` and press return
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-To analyse this regex, follow the steps with the arrow key: <Right>
+To analyse this regex, follow the steps with the arrow key: <Right> but dont type the examples in to vim ( until the end at least ).
 
 ==============================
 1) We declare a group with `\(`
