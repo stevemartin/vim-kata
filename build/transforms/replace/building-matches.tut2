@@ -3,7 +3,7 @@ Tutorial: continue building up your match with groups
 
 We also know that we want to extract the email addresses from the csv, so we can construct a match, partly based on our previous matches.
 
-Type: `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)`
+1. Type: `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)<cr>`
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
@@ -18,6 +18,7 @@ Type: `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)`
 ,Central Assets Flying Limited,mandrake@centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
+
 
 We can see that there are several entries in the list that have the correct `@` symbol for email, and are not matched.
 To include these we need to add a grouping OR using the `\(thing|otherthing\)` syntax.
@@ -45,9 +46,10 @@ Becomes:            with v
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-Now we want to match the remaining part of the line in its own group, this is so we can reformat the lines.
+Now we want to match the remaining parts of the line, this is so we can reformat the lines.
+We do this by creating groups.
 
-Type: `/\(^,[a-zA-Z0-9.\-_ +]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.]*\)\(,[a-zA-Z0-9.\-_ +,]*\)`
+2. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.]*\)\(.*\)`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -65,26 +67,9 @@ Type: `/\(^,[a-zA-Z0-9.\-_ +]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.]*\)\(,[a-zA-Z0-
 ================================
 
 We can conitnue to refine this regex to get better matches...
-
-`\(^,[()a-zA-Z0-9.\-_ +]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)\(,[a-zA-Z0-9.\-_ +,]*\)`
-
-================================
-,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
-,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
-,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
-,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
-,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
-,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk ,Warwick,Mattick,
-,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
-,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
-,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
-,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
-================================
-
 Now we add an optional whitespace to match emails that have a trailing space
-`/\(^,[()a-zA-Z0-9.\-_ +]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)\s\?,\([a-zA-Z0-9.\-_ +,]*\)`
+
+3. `/\(^,[^,]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)\s\?,\(.*\)`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -100,4 +85,3 @@ Now we add an optional whitespace to match emails that have a trailing space
 ,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
-
