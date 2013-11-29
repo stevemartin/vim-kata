@@ -3,7 +3,7 @@ Tutorial: transforming text using search replace
 
 # Now we have built up a regex that will handle most of the cases we care about, we can start to transform the data.
 
-1. Type: `/\(^,[()a-zA-Z0-9.\-_ +]*,\)\([a-zA-Z0-9.]*\(+AEA-\)[a-zA-Z0-9.+\-]*\)\s\?,\([a-zA-Z0-9.\-_ +,']*\)`
+1. Type: `/\(^,[^,]*,\)\([^,]*\),\(.*\)`
 2. Type: `:16,27s//\2/`
 
 And you see just a list of the emails.

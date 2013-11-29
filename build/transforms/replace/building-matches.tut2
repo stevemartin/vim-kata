@@ -26,6 +26,10 @@ To include these we need to add a grouping OR using the `\(thing|otherthing\)` s
 Becomes:            with v
 `/\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)`
 
+`\(` Opens the group
+`\|` Is our OR
+`\)` Closes the group.
+
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,

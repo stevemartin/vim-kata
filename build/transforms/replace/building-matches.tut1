@@ -3,7 +3,7 @@ Tutorial: build up your match
 
 Given we are editing a csv file with a finite number of rows per line, we can do something like this ...
 
-Type: `/\(^,[a-zA-Z0-9.\-_ +]*,\)` and press return
+Type: `/\(^,[^,]*,\)` and press return
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
@@ -19,33 +19,54 @@ Type: `/\(^,[a-zA-Z0-9.\-_ +]*,\)` and press return
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-To analyse this regex, follow the steps
+To analyse this regex, follow the steps with the arrow key: <Right>
 
+==============================
 1) We declare a group with `\(`
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
+`/\(^,[^,]*,\)`
 
+=============================
+
+=============================================
 2) We match the beginning of the line with `^`
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
+`/\(^,[^,]*,\)`
 
+=============================================
+
+=====================================================
 3) We match the comma after the beginning of the line.
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
+`/\(^,[^,]*,\)`
 
-4) We create our character class ( everything within the `[]` ) to not include commas ;)
+====================================================
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
+===========================================================================================================
+4) We create our character class ( everything within the `[]` ) to match everything, not including commas ;)
 
+`/\(^,[^,]*,\)`
+
+==========================================================================================================
+
+====================================================================
 4) We stop our match at the next comma ( including it in our match ).
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
+`/\(^,[^,]*,\)`
 
+===================================================================
+
+=================================
 5) We close the group declaration
 
+`/\(^,[^,]*,\)`
+
+=================================
+
+=========================================================================================================================
+
 `/\(^,[a-zA-Z0-9.\-_ +]*,\)`
 
-To recap the steps
+This allows you to be very specific about the types of characters you want to match.
 
-`/\(^,[a-zA-Z0-9.\-_ +]*,\)`
-
+=========================================================================================================================

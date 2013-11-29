@@ -32,5 +32,8 @@ Type: `/[a-zA-Z0-9.\-_ +*()]`
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-We have created our own characther class `[a-zA-Z0-9.\-_ +*()]` to match ( nearly ) everything between the commas.
+We have created our own character range `[a-zA-Z0-9.\-_ +*()]` to match ( nearly ) everything between the commas.
 ^
+
+We can also use negation to do this: `[^,`]`. The `^` inside the `[]` indicates that we want to match everything except commas.
+^                                     ^
