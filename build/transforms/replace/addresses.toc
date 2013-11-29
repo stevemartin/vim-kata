@@ -29,8 +29,7 @@ build/transforms/replace/building-matches.tut1|41 col 6|%m
 build/transforms/replace/building-matches.tut1|48 col 7|%m
 build/transforms/replace/building-matches.tut1|55 col 12|%m
 build/transforms/replace/building-matches.tut1|62 col 13|%m
-build/transforms/replace/building-matches.tut1|66 col 99|%m
-build/transforms/replace/building-matches.tut1|68 col 8|%m
+build/transforms/replace/building-matches.tut1|69 col 8|%m
 build/transforms/replace/building-matches.tut2|6 col 1|%m
 build/transforms/replace/building-matches.tut2|25 col 17|%m
 build/transforms/replace/building-matches.tut2|27 col 18|%m

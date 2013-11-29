@@ -72,7 +72,7 @@ To analyse this regex, follow the steps with the arrow key: <Right>
 =================================
 
 =========================================================================================================================
-NOTE, you could use an inclusive character ( [a-zA-Z0-9.\-_ +] ) range instead of an exclusive ( [^,] ) range, seen below:
+NOTE, you could use an inclusive character range ( `[a-zA-Z0-9.\-_ +]` ) instead of an exclusive ( `[^,]` ) range, seen below:
 
 `/\(^,[a-zA-Z0-9.\-_ +]*,\)`
        ^

@@ -43,7 +43,7 @@ To analyse this regex, follow the steps with the arrow key: <Right>
 ====================================================
 
 ===========================================================================================================
-4) We create our character class ( everything within the `[]` ) to match everything, not including commas ;)
+4) We create our character range ( everything within the `[]` ) to match everything, excluding commas ;)
 
 `/\(^,[^,]*,\)`
 
@@ -57,13 +57,14 @@ To analyse this regex, follow the steps with the arrow key: <Right>
 ===================================================================
 
 =================================
-5) We close the group declaration
+5) We close the group declaration with `\)`
 
 `/\(^,[^,]*,\)`
 
 =================================
 
 =========================================================================================================================
+NOTE, you could use an inclusive character range ( `[a-zA-Z0-9.\-_ +]` ) instead of an exclusive ( `[^,]` ) range, seen below:
 
 `/\(^,[a-zA-Z0-9.\-_ +]*,\)`
 
