@@ -101,7 +101,7 @@ Add an optional whitespace to match emails that have a trailing space
 NOTE: You can search through previous matches by pressing '/' and then the up or down arrow keys ( match history ).
 
 3. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)\s\?,\(.*\)`
-                                                              ^
+                                                                    ^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -129,7 +129,7 @@ We can actually simplify this regex a bit to make it easier to maintain, and add
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
 ,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-progri/\ammer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
+,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
 ,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
 ,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,

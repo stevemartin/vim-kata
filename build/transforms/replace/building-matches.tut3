@@ -1,57 +1,71 @@
 Tutorial: transforming text using search replace
 --------------------------
 
-# Now we have built up a regex that will handle most of the cases we care about, we can start to transform the data.
-
 1. Type: `/\(^,[^,]*,\)\([^,]*\)\(.*\)`
-2. Type: `:16,27s//\2/`
+2. Type: `:14,25s//\2/`
 
-And you see just a list of the emails.
+You see a list of unformatted, un validated emails.
 
-3. Press `u` to undo the transform.
+3. Press `u` to undo the transform and <Ctrl>R to redo.
 
-The nice thing about doing this kind of operation in vi is that you can undo it at any point and reapply a slight modification without causing any harm, just press `u`.
+The nice thing about doing this kind of operation in vim is that you can undo it at any point and reapply a slight modification without causing any harm, just press `u`.
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
-,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
-,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
-,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk,Warwick,Mattick,
+,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
+,Messenger Programmer Finance Society,dave+AEA-progri/\ammer+AC0-finance+AC0-developers.com,David,Programmer,
+,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
+,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
+,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
 ,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
-,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
+,Central Assets Flying Limited,mandrake@centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
 ## If we slightly modify this regular expression, we can switch the order of the fields
 
-4. Type: `/^,\([^,]*\),\([a-zA-Z0-9.]*\(+AEA-\)[a-zA-Z0-9.+\-]*\)\s\?\(.*\)`
+4. Type: `/^,\([^,]*\),\([^,]*]*\)\s\?\(,.*\)`
 
-5. Type: `:36,47s//\2 - \1/`
+5. Type: `:34,45s//\2 - \1/`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
-,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
-,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
-,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk,Warwick,Mattick,
+,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
+,Messenger Programmer Finance Society,dave+AEA-progri/\ammer+AC0-finance+AC0-developers.com,David,Programmer,
+,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
+,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
+,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
 ,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
-,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
+,Central Assets Flying Limited,mandrake@centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-## If we modify it further, we can reformat the data on the fly.
-6. Type: `/^,\([^,]*\),\([a-zA-Z0-9.]*\)\(+AEA-\)\([a-zA-Z0-9.+\-]*\)\s\?\(.*\)`
+Lets dissect this further....
 
-7. Type: `:55,66s//\2@\4 - \1/`
+====================================
+
+We take the commas and other charcters that we dont want to keep out of the groups ...
+
+`/^,\([^,]*\),\([^,]*]*\)\s\?\(,.*\)`
+
+`/^,\([^,]*\),\([^,]*]*\)\s\?\(,.*\)`
+
+`/^,\([^,]*\),\([^,]*]*\)\s\?\(,.*\)`
+
+So that we are left with only the text we want in group `\1` and group `\2` when we do the replace.
+
+==============================================================
+
+## If we modify it to isolate parts of the email, we can reformat the data on the fly.
+6. Type: `/^,\([^,]*\),\([^,]*\)\(+AEA-\|@\)\([^,]*\)\s\?\(.*\)`
+
+7. Type: `:53,64s//\2@\4 - \1/`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
