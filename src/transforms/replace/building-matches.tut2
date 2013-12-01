@@ -9,10 +9,10 @@ We also know that we want to extract the email addresses from the csv, so we can
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
+,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
 ,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
-,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
+,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
 ,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
 ,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
@@ -26,9 +26,13 @@ To include these we need to add a grouping OR using the `\(thing|otherthing\)` s
 
 `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)`
                 ^
-Becomes:            with v
+
+Becomes:
 `/\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)`
-                 ^       ^
+                 ^
+
+A quick recap...
+^
 
 `\(` Opens the group
 ^
@@ -37,16 +41,19 @@ Becomes:            with v
 `\)` Closes the group.
 ^
 
+\(+AEA-\|@\)
+^
+
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
-,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
+,Adlington Flying Cars Limited,david+AEA-adlingflying.com ,David,Flying,
+,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
+,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
 ,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
 ,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
-,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
+,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com ,jeremy,element,
 ,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
 ,Central Assets Flying Limited,mandrake@centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
@@ -57,43 +64,78 @@ Now we want to match the remaining parts of the line, this is so we can reformat
 We do this by creating groups.
 ^
 
-2. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.]*\)\(.*\)`
+2. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.]*\)\(,.*\)`
 ^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
+,Bittygold Commercial Flour Ltd,darren.cook@bittygold.co.uk,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
 ,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
 ,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
-,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk,Warwick,Mattick,
+,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk ,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
-,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
+,B+ACY-S Asset Migration Loans,mike.myers@assetmigrations.co.uk ,Mike,Myers,
 ,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
 
-We can conitnue to refine this regex to get better matches...
-^
-Now we add an optional whitespace to match emails that have a trailing space
+To dissect:
+
+1. `\(^,[^,]*,\)` Matches everyting before the email.
 ^
 
-3. `/\(^,[^,]*,\)\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)\s\?,\(.*\)`
+2. `\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.]*\)` Matches the email ( we will refine this further, but for the moment this is fine as a working example ).
 ^
+
+3. `\(,.*\)` Matches the rest of the line after the email.
+^
+
+We can conitnue to refine this regex to get better matches.
+^
+Add an optional whitespace to match emails that have a trailing space
+^
+
+NOTE: You can search through previous matches by pressing '/' and then the up or down arrow keys ( match history ).
+
+3. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)\s\?,\(.*\)`
+                                                              ^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
-,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk,Darren,Flour,
+,Bittygold Commercial Flour Ltd,darren.cook@bittygold.co.uk,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-programmer+AC0-finance+AC0-developers.com,David,Programmer,
 ,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
 ,Charwill Finland Services Limited,info+AEA-finlandquote.com,Mark,Tree,
 ,In De Pen Dance Analysis Finance,warwick+AEA-iafnet.co.uk ,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
-,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
+,B+ACY-S Asset Migration Loans,mike.myers@assetmigrations.co.uk,Mike,Myers,
 ,Central Assets Flying Limited,mandrake+AEA-centralassetflying.co.uk,Mandrake,Parkers,
 ,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
 ================================
+
+Now we have successfully built up a robust regex for matching the parts of the CSV.
+We can actually simplify this regex a bit to make it easier to maintain, and add some vaidation, by using more negation.
+
+4. Type: `/\(^,[^,]*,\)\([^,/\/]*\(+AEA-\|@\)[^,/\/]*\)\(,.*\)`
+
+================================
+,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
+,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
+,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
+,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
+,Messenger Programmer Finance Society,dave+AEA-progri/\ammer+AC0-finance+AC0-developers.com,David,Programmer,
+,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
+,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
+,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
+,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,
+,B+ACY-S Asset Migration Loans,mike.myers+AEA-assetmigrations.co.uk,Mike,Myers,
+,Central Assets Flying Limited,mandrake@centralassetflying.co.uk,Mandrake,Parkers,
+,AdmiralAcbar +ACY- Cooperative Ltd,mha+AEA-ackbarlink.net,Mirza,Factor,
+================================
+
+We have successfully validated ( to a small degree ) the email matches!
