@@ -1,0 +1,40 @@
+# Adding parameters to methods.
+
+===================================
+1. Add a parameter to the following method by typing `:RAddParameter<cr>foo<cr>`
+
+def my_func
+    ^
+end
+===================================
+
+===================================
+2. Type `<leader>rap foo<cr>` for the same effect. You don't need to
+NOTE: <leader> is mapped to \ by default, so in practice this means you type `\rap`.
+
+def my_func
+    ^
+end
+===================================
+
+===================================
+3. Add another to the following function by typing `:RAddParameter<cr>bar = {}<cr>' or `\rapbar = {}<cr>`
+
+def my_func(foo)
+    ^
+end
+===================================
+
+===================================
+# You can also add parameters without brackets with :RAddParameterNB and \rapn
+
+4. Add another to the following function by typing `:RAddParameterNB<cr>foo<cr>ea,' or `\rapnfoo<cr>ea,`
+
+def my_func
+    ^
+end
+
+NOTE: The No Bracket mode is a little sketchy and may not add the commas between the arguments.
+To get around this we add `ea,` to add the comma between the args required by the ruby parser.
+
+===================================

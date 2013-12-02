@@ -1,0 +1,79 @@
+ vim: se filetype=ruby:
+
+Given I have the following code:
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+    leo = wo + yi
+  end
+
+end
+
+======================
+1. Type `vg_:RExtractMethod<cr>add<cr>`
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+          ^
+    leo = wo + yi
+  end
+
+end
+
+NOTE: `vg_` will do a visual selection to and *not* including the end of the line.
+
+======================
+
+======================
+2. Type `vg_\remadd<cr>`
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+          ^
+    leo = wo + yi
+  end
+
+end
+
+NOTE: This is not quite perfect, you may still need to add the parameters to the call to add()
+^
+
+======================
+
+======================
+3. Type: `vg_\remadd_return_key<cr>5wD<esc>`
+
+class Foo
+  def return_key
+    ''
+  end
+
+  def select_method
+    @commands = ':normal gg'
+    @commands << return_key
+    ^
+  end
+end
+
+Unfortunately we have to add the `5wD<esc>` to remove the non existant variable,
+^
+however this should be consistent every time you use this refactoring.
+======================

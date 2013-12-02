@@ -1,0 +1,11 @@
+This tutorial comes with the vundle gem already bundled.
+
+1. You can view the vimrc for this project, type `:vs src/refactoring/vim/vimrc`.
+                                                  ^
+
+2. Line 8 of this file shows us the `Bundle 'ecomba/vim-ruby-refactoring'` command used to install the ruby refactoring plugin that we are going to use.
+^
+
+3. Type `:BundleInstall` to install the plugins for this tutorial, when you see 'Done!' at the bottom of the screen press `q` to exit the bundle screen.
+^
+To find out more about the Vundle plugin, go to https://github.com/gmarik/vundle.
