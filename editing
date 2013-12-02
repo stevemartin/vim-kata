@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+vim -n -i NONE --noplugin -u ./vimrc build/editing/tut-1

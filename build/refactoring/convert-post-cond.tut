@@ -1,0 +1,12 @@
+ vim: se filetype=ruby:
+
+1. Convert this conditional by typing `:RConvertPostConditional`
+
+my_func(2) if other_func == true
+
+2. Type `<leader>rcpc` for the same effect.
+NOTE: <leader> is mapped to \ by default, so in practice this means you type \rcpc.
+
+my_other_func(3) if other_func == true
+
+NOTE: The modeline at the top of the file tells vim to treat this file as a ruby file. You can find out more by typing `:h modeline`.

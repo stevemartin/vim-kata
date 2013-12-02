@@ -1,0 +1,11 @@
+ vim: se filetype=ruby:
+
+1. Dry up the my_func method in the rby file by typing `:RInlineTemp`
+
+def my_func( thing )
+  base = some_thing.action
+  base > 1000
+end
+
+2. Type `<leader>rit` for the same effect.
+

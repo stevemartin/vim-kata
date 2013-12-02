@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+vim -n -i NONE -u src/refactoring/vim/vimrc build/refactoring/tut-1

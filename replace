@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-
-vim -n -i NONE --noplugin -u ./vimrc build/transforms/replace/tut-1
