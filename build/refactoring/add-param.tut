@@ -3,7 +3,7 @@
 ===================================
 1. Add a parameter to the following method by typing `:RAddParameter<cr>foo<cr>`
 
-def my_func(foo)
+def my_func
 end
 ===================================
 
@@ -11,7 +11,7 @@ end
 2. Type `<leader>rap foo<cr>` for the same effect. You don't need to
 NOTE: <leader> is mapped to \ by default, so in practice this means you type `\rap`.
 
-def my_func(foo)
+def my_func
 end
 ===================================
 
@@ -20,7 +20,6 @@ end
 
 def my_func(foo)
 end
-
 ===================================
 
 ===================================
@@ -28,9 +27,10 @@ end
 
 4. Add another to the following function by typing `:RAddParameterNB<cr>foo<cr>ea,' or `\rapnfoo<cr>ea,`
 
-def my_func foo, bar, zee = {}
+def my_func
 end
 
-NOTE: The No Bracket mode is a little sketchy, and tbh the plugin needs improving, try adding another parameter to see what I mean.
+NOTE: The No Bracket mode is a little sketchy and may not add the commas between the arguments.
+To get around this we add `ea,` to add the comma between the args required by the ruby parser.
 
 ===================================

@@ -23,3 +23,8 @@ build/refactoring/extract-method.tut|48 col 11|%m
 build/refactoring/extract-method.tut|54 col 1|%m
 build/refactoring/extract-method.tut|68 col 5|%m
 build/refactoring/extract-method.tut|72 col 1|%m
+build/refactoring/global-refactorings.tut|5 col 1|%m
+build/refactoring/global-refactorings.tut|7 col 1|%m
+build/refactoring/global-refactorings.tut|9 col 1|%m
+build/refactoring/global-refactorings.tut|11 col 1|%m
+build/refactoring/global-refactorings.tut|13 col 1|%m

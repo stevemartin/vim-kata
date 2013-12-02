@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 
+cp -rf src/refactoring/globals build/refactoring/globals
+
 vim -n -i NONE -u src/refactoring/vim/vimrc build/refactoring/tut-1
