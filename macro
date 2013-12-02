@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-vim -n -i NONE --noplugin -u ./vimrc build/transforms/macros/tut-1
+vim -n -i NONE --noplugin -u ./vimrc build/macros/tut-1

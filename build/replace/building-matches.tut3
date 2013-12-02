@@ -8,7 +8,7 @@ You see a list of unformatted, un validated emails.
 
 3. Press `u` to undo the transform and <Ctrl>R to redo.
 
-The nice thing about doing this kind of operation in vim is that you can undo it at any point and reapply a slight modification without causing any harm, just press `u`.
+The nice thing about doing this kind of operation in vim is that you can undo it at any point and reapply a slight modification without causing any harm.
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -29,7 +29,7 @@ The nice thing about doing this kind of operation in vim is that you can undo it
 
 4. Type: `/^,\([^,]*\),\([^,]*]*\)\s\?\(,.*\)`
 
-5. Type: `:34,45s//\2 - \1/`
+5. Type: `:35,46s//\2 - \1/`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -62,10 +62,10 @@ So that we are left with only the text we want in group `\1` and group `\2` when
 
 ==============================================================
 
-## If we modify it to isolate parts of the email, we can reformat the data on the fly.
+## If we modify it to isolate parts of the email, we can fix the formatting too.
 6. Type: `/^,\([^,]*\),\([^,]*\)\(+AEA-\|@\)\([^,]*\)\s\?\(.*\)`
 
-7. Type: `:53,64s//\2@\4 - \1/`
+7. Type: `:71,82s//\2@\4 - \1/`
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -86,10 +86,10 @@ So that we are left with only the text we want in group `\1` and group `\2` when
 
 8. Type: `u`
 
-9. Type: `:%s//"\2@\4" => "\1"/`
+9. Type: `:71,82s//"\2@\4" => "\1"/`
 
 oops, missed the comma's, undo and then type:
 
 10. Type: `u`
 
-11. Type: `:%s//"\2@\4" => "\1",/`
+11. Type: `:71,82s//"\2@\4" => "\1",/`
