@@ -6,3 +6,4 @@
 - src/refactoring/extract-constant.tut
 - src/refactoring/local-variable.tut
 - src/refactoring/extract-method.tut
+- src/refactoring/rename-local-variable.tut

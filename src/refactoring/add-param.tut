@@ -28,11 +28,13 @@ end
 ===================================
 # You can also add parameters without brackets with :RAddParameterNB and \rapn
 
-4. Add another to the following function by typing `:RAddParameterNB<cr>foo<cr>' or `\rapnfoo<cr>`
+4. Add another to the following function by typing `:RAddParameterNB<cr>foo<cr>ea,' or `\rapnfoo<cr>ea,`
 
 def my_func
     ^
 end
 
-NOTE: The No Bracket mode is a little sketchy, and tbh the plugin needs improving, try adding another parameter to see what I mean.
+NOTE: The No Bracket mode is a little sketchy and may not add the commas between the arguments.
+To get around this we add `ea,` to add the comma between the args required by the ruby parser.
+
 ===================================

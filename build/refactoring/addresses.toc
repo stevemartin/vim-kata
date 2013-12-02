@@ -9,6 +9,8 @@ build/refactoring/add-param.tut|30 col 5|%m
 build/refactoring/convert-post-cond.tut|5 col 1|%m
 build/refactoring/convert-post-cond.tut|10 col 1|%m
 build/refactoring/inline-temp.tut|6 col 3|%m
+build/refactoring/inline-temp.tut|17 col 3|%m
+build/refactoring/inline-temp.tut|26 col 3|%m
 build/refactoring/extract-constant.tut|3 col 1|%m
 build/refactoring/extract-constant.tut|20 col 5|%m
 build/refactoring/extract-constant.tut|31 col 1|%m
