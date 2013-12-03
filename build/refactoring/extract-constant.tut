@@ -12,7 +12,7 @@ class Foo
 end
 
 ======================
-1. Type `ve:RExtractConstant<cr>answer<cr>`
+1. Type `RExtractConstant<cr>answer<cr>`
 
 class Foo
 

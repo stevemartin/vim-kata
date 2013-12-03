@@ -12,5 +12,8 @@ This tutorial comes with the vundle gem already bundled.
 4. Exit the vimrc file.
 ^
 
+5. Type `:source src/refactoring/vim/vimrc`. If you are only just installing the plugins you will need to do this. Its possible you will need to restart vim again as some plugins only work after a reload.
+^
+
 To find out more about the Vundle plugin, go to https://github.com/gmarik/vundle.
 ^

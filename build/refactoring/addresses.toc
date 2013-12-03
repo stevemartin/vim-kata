@@ -4,6 +4,7 @@ build/refactoring/bundle.tut|5 col 1|%m
 build/refactoring/bundle.tut|7 col 1|%m
 build/refactoring/bundle.tut|9 col 1|%m
 build/refactoring/bundle.tut|11 col 1|%m
+build/refactoring/bundle.tut|13 col 1|%m
 build/refactoring/add-param.tut|6 col 5|%m
 build/refactoring/add-param.tut|14 col 5|%m
 build/refactoring/add-param.tut|21 col 5|%m
@@ -32,3 +33,7 @@ build/refactoring/global-refactorings.tut|7 col 1|%m
 build/refactoring/global-refactorings.tut|9 col 1|%m
 build/refactoring/global-refactorings.tut|11 col 1|%m
 build/refactoring/global-refactorings.tut|13 col 1|%m
+build/refactoring/global-refactorings.tut|19 col 1|%m
+build/refactoring/global-refactorings.tut|20 col 1|%m
+build/refactoring/global-refactorings.tut|21 col 1|%m
+build/refactoring/global-refactorings.tut|22 col 1|%m
