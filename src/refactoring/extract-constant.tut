@@ -1,0 +1,57 @@
+ vim: se filetype=ruby:
+
+Given I have the following code:
+^
+
+class Foo
+  def foo
+    42
+  end
+  def bar answer
+    answer == foo
+  end
+end
+
+======================
+1. Type `RExtractConstant<cr>answer<cr>`
+
+class Foo
+
+  def foo
+    42
+    ^
+  end
+
+  def bar answer
+    answer == foo
+  end
+
+end
+
+To dissect ...
+
+2. `ve` does a visual seection to the end of the word "42".
+^
+
+3. `:RExtractConstant<cr>answer<cr>` extracts the selection to a constant named ANSWER *inside* the class or module.
+^
+======================
+
+======================
+The mapped version:
+
+4. Type `ve\recanswer<cr>`
+
+class Foo
+
+  def foo
+    42
+    ^
+  end
+
+  def bar answer
+    answer == foo
+  end
+
+end
+======================

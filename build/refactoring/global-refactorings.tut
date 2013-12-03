@@ -1,0 +1,22 @@
+# Global Refactoring
+
+Global refactoring in Vim is quite easy.
+
+1. Type `:args build/refactoring/globals/* | e build/refactoring/global-refactorings.tut`
+
+2. Type `:args` - You should see a list of ruby files like:
+
+[build/refactoring/globals/fifth.rb build/refactoring/globals/first.rb build/refactoring/globals/fourth.rb build/refactoring/globals/second.rb build/refactoring/globals/third.rb]
+
+3. Type `:argdo %s/First/Yi/gec | update | e build/refactoring/global-refactorings.tut`
+
+4. Type `:argdo %s/first/yi/gec | update | e build/refactoring/global-refactorings.tut`
+
+In practice you dont need the `c` confirm flag, or the last part of the command `e build/refactoring/global-refactorings.tut`, but for the sakes of this tutorial we use them so we can see whats going on.
+
+Lets dissect this a bit....
+
+1. `:argdo %s/First/Yi/gec` sends the search replace command to each buffer, globally, asking for confirmation.
+2. `|` indicates that we want to execute a seperate command after each of the previous ones has finished against the args list.
+3. `update` saves all the files in the args list.
+4. `e build/refactoring/global-refactorings.tut` brings us back to this file.

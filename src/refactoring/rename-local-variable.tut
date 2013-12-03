@@ -1,0 +1,18 @@
+# Rename a local variable
+
+====================================
+1. Type: `:8,10s/foo/bar/` To rename the local variable
+
+def bar
+ foo = 7
+ thing(foo)
+ other_thing(foo)
+end
+
+def other
+  foo = 8
+  thing(foo)
+  other_thing(bar)
+end
+
+===================================

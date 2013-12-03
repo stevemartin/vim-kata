@@ -4,6 +4,7 @@ Tutorial: continue building up your match with groups
 We also know that we want to extract the email addresses from the csv, so we can construct a match, partly based on our previous matches.
 
 1. Type: `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)<cr>`
+^
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
 ,Chester Jesters Ltd,chester+AEA-cgs.co.uk,Chester,Jester,
@@ -24,15 +25,24 @@ We can see that there are several entries in the list that have the correct `@` 
 To include these we need to add a grouping OR using the `\(thing|otherthing\)` syntax.
 
 `/\([a-zA-Z0-9.]*+AEA-[a-zA-Z0-9.+\-]*\)`
+                ^
 
 Becomes:
 `/\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)`
+                 ^
 
 A quick recap...
+^
 
 `\(` Opens the group
+^
 `\|` Is our OR
+^
 `\)` Closes the group.
+^
+
+\(+AEA-\|@\)
+^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -50,9 +60,12 @@ A quick recap...
 ================================
 
 Now we want to match the remaining parts of the line, this is so we can reformat the lines.
+^
 We do this by creating groups.
+^
 
 2. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.]*\)\(,.*\)`
+^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -72,17 +85,23 @@ We do this by creating groups.
 To dissect:
 
 1. `\(^,[^,]*,\)` Matches everyting before the email.
+^
 
 2. `\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.]*\)` Matches the email ( we will refine this further, but for the moment this is fine as a working example ).
+^
 
 3. `\(,.*\)` Matches the rest of the line after the email.
+^
 
 We can conitnue to refine this regex to get better matches.
+^
 Add an optional whitespace to match emails that have a trailing space
+^
 
 NOTE: You can search through previous matches by pressing '/' and then the up or down arrow keys ( match history ).
 
 3. Type: `/\(^,[^,]*,\)\([a-zA-Z0-9.]*\(+AEA-\|@\)[a-zA-Z0-9.+\-]*\)\s\?,\(.*\)`
+                                                                    ^
 
 ================================
 ,Bee Floundering Centre aka Gurgle Cans,mark+AEA-gurgle-cans.co.uk,Matt ,Wonkey,
@@ -110,7 +129,7 @@ We can actually simplify this regex a bit to make it easier to maintain, and add
 ,Adlington Flying Cars Limited,david+AEA-adlingflying.com,David,Flying,
 ,Bittygold Commercial Flour Ltd,darren.cook+AEA-bittygold.co.uk ,Darren,Flour,
 ,Messenger Programmer Finance Society,dave+AEA-progri/\ammer+AC0-finance+AC0-developers.com,David,Programmer,
-,Clear Your Head,chris+AEA-clearyourhead.com,Chris,Clear,
+,Clear Your Head,chris+AEA-clearyourhead.com ,Chris,Clear,
 ,Charwill Finland Services Limited,info+AEA-finlandquote.com ,Mark,Tree,
 ,In De Pen Dance Analysis Finance,warwick@iafnet.co.uk,Warwick,Mattick,
 ,moneymatters ( AKA ) funny hatters,info+AEA-funnyhattersyousay.com,jeremy,element,

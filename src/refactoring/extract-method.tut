@@ -1,0 +1,94 @@
+ vim: se filetype=ruby:
+
+Given I have the following code:
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+    leo = wo + yi
+  end
+
+end
+
+======================
+1. Type `vg_:RExtractMethod<cr>add<cr>`
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+          ^
+    leo = wo + yi
+  end
+
+end
+
+NOTE: `vg_` will do a visual selection to and *not* including the end of the line.
+
+======================
+
+======================
+2. Type `vg_\remadd<cr>`
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    wo  = er + san
+          ^
+    leo = wo + yi
+  end
+
+end
+======================
+
+======================
+3. Type `<Shift>vj\remadd<cr>`
+
+class Foo
+
+  def pinyin
+    yi  = 1
+    er  = 2
+    san = 3
+    si  = er + er
+    ^
+    wo  = er + san
+    leo = wo + yi
+    chi = wo + er
+    ba  = si + si
+  end
+
+end
+======================
+
+======================
+4. Type: `vg_\remadd_return_key<cr>bbD5wD<esc>`
+
+class Foo
+  def return_key
+    ''
+  end
+
+  def select_method
+    @commands = ':normal gg'
+    @commands << return_key
+    ^
+  end
+end
+
+Unfortunately we have to add `bbd5wD<esc>` to remove the non existant variable.
+^
+======================
