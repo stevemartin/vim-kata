@@ -19,7 +19,7 @@ To run the search replace tutorial in the terminal, run:
 
     ./replace
 
-To run ruby refactoring uutorial in the terminal, run:
+To run ruby refactoring tutorial in the terminal, run:
 
     ./refactoring
 
