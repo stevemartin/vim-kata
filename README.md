@@ -4,6 +4,9 @@ Clone this repository by running:
 
     git clone git@github.com:stevemartin/vim-kata.git
     cd vim-kata
+
+## Build it
+
     rake build
 
 ## Launch the VimDojo
