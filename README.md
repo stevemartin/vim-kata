@@ -2,20 +2,23 @@
 
 Clone this repository by running:
 
-    git clone git@github.com:stevemartin/vim-search-replace-kata.git
-    cd vim-search-replace-kata
+    git clone git@github.com:stevemartin/vim-kata.git
+    cd vim-kata
+    rake build
 
 ## Launch the VimDojo
 
 To run the macro tutorial in the terminal, run:
 
-    rake build_macro
     ./macro
 
 To run the search replace tutorial in the terminal, run:
 
-    rake build_replace
     ./replace
+
+To run ruby refactoring uutorial in the terminal, run:
+
+    ./refactoring
 
 ## Navigate the lessons
 
