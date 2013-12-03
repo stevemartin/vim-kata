@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 set nu
 
-Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'AlexParamonov/vim-ruby-refactoring'
 " matchit is needed for the refactoring plugin
 Bundle 'tsaleh/vim-matchit'
 

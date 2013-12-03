@@ -1,7 +1,6 @@
  vim: se filetype=ruby:
 
 Given I have the following code:
-^
 
 class Foo
   def foo
@@ -13,13 +12,12 @@ class Foo
 end
 
 ======================
-1. Type `RExtractConstant<cr>answer<cr>`
+1. Type `ve:RExtractConstant<cr>answer<cr>`
 
 class Foo
 
   def foo
     42
-    ^
   end
 
   def bar answer
@@ -31,10 +29,8 @@ end
 To dissect ...
 
 2. `ve` does a visual seection to the end of the word "42".
-^
 
 3. `:RExtractConstant<cr>answer<cr>` extracts the selection to a constant named ANSWER *inside* the class or module.
-^
 ======================
 
 ======================
@@ -46,7 +42,6 @@ class Foo
 
   def foo
     42
-    ^
   end
 
   def bar answer

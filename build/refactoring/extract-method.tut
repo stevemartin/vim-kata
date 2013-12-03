@@ -26,7 +26,6 @@ class Foo
     san = 3
     si  = er + er
     wo  = er + san
-          ^
     leo = wo + yi
   end
 
@@ -47,7 +46,6 @@ class Foo
     san = 3
     si  = er + er
     wo  = er + san
-          ^
     leo = wo + yi
   end
 
@@ -55,7 +53,7 @@ end
 ======================
 
 ======================
-3. Type `<Shift>vj\remadd<cr>`
+3. Type `vg_j\remadd<cr>`
 
 class Foo
 
@@ -64,7 +62,6 @@ class Foo
     er  = 2
     san = 3
     si  = er + er
-    ^
     wo  = er + san
     leo = wo + yi
     chi = wo + er
@@ -75,7 +72,7 @@ end
 ======================
 
 ======================
-4. Type: `vg_\remadd_return_key<cr>bbD5wD<esc>`
+4. Type: `vg_\remadd_return_key<cr>5wD<esc>`
 
 class Foo
   def return_key
@@ -85,10 +82,8 @@ class Foo
   def select_method
     @commands = ':normal gg'
     @commands << return_key
-    ^
   end
 end
 
-Unfortunately we have to add `bbd5wD<esc>` to remove the non existant variable.
-^
+Unfortunately we have to add `5wD<esc>` to remove the non existant variable.
 ======================
