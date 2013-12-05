@@ -21,7 +21,15 @@ To run the search replace tutorial in the terminal, run:
 
 To run ruby refactoring tutorial in the terminal, run:
 
+    ### NOTE: The `rake refactoring:prepare_vimfiles` command copies your existing
+    ### ~/.vimrc and ~/.vim to backed up versions until you restore them with `rake refactoring:restore_vimfiles`.
+
+    rake refactoring:prepare_vimfiles
+
     ./refactoring
+
+    rake refactoring:restore_vimfiles
+
 
 ## Navigate the lessons
 

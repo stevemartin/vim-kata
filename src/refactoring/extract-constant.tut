@@ -13,7 +13,7 @@ class Foo
 end
 
 ======================
-1. Type `RExtractConstant<cr>answer<cr>`
+1. Type `ve:RExtractConstant<cr>answer<cr>`
 
 class Foo
 
@@ -30,10 +30,10 @@ end
 
 To dissect ...
 
-2. `ve` does a visual seection to the end of the word "42".
+2. `ve` does a visual selection to the end of the word "42".
 ^
 
-3. `:RExtractConstant<cr>answer<cr>` extracts the selection to a constant named ANSWER *inside* the class or module.
+3. `ve:RExtractConstant<cr>answer<cr>` extracts the selection to a constant named ANSWER *inside* the class or module.
 ^
 ======================
 
