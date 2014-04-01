@@ -29,7 +29,7 @@ Consider the following in Vim ( but dont type the commands ... yet ).
 '11@q` repeats the macro recorded in q eleven times.
 ^
 
-Now type the following where <cr> is Return <Space> is space and <esc> is Escape:
+Now type the following where <cr> means "Press Return" <Space> means "Press Space" and <esc> is "Press Escape":
 ^
 
 `28ggqq0v/,<cr>"rdnDa<Space>-<Space><esc>"rpxNxj^q11@q`
