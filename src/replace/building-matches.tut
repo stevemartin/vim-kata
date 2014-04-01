@@ -23,7 +23,12 @@ This is almost eqivalent to typing:
 If we look at the csv data below, We can see that the `/\w` or `/[a-zA-Z0-9]`
 doesn't quite match some characters, so we modify the match to be a more all encompasing one.
 
-2. Type: `/[a-zA-Z0-9.\-_ +*()]<cr>`
+Now clear the matches from the screen...
+
+2. Type: `:noh<cr>` to clear the matches.
+^
+
+3. Type: `/[a-zA-Z0-9.\-_ +*()]<cr>`
 ^
 
 ==========================================================
@@ -49,7 +54,7 @@ We have created our own character range `[a-zA-Z0-9.\-_ +*()]` to match ( nearly
 We can also use negation to do this: `[^,]`. The `^` inside the `[]` indicates that we want to match everything except commas.
 ^                                     ^
 
-3. Type: `/[^,]<cr>`
+4. Type: `/[^,]<cr>`
 ^
 
 ================================

@@ -9,9 +9,9 @@ Tutorial: searching text with `/`
     War of the roses.
     Guns & Roses.
            ^
-    Rose tinted glasses.
+    Rose garden.
 
-`/` enters Vims search mode, enything you type after this will be matched ( if it exists )
+`/` enters Vims search mode, anything you type after this will be matched ( if it exists )
 ^
 
 2. Type: `:reg /`
@@ -28,7 +28,7 @@ the 'Roses' string.
     War of the roses.
                ^
     Guns & Roses.
-    Rose tinted glasses.
+    Rose garden.
 
 The `\c` flag in search mode makes the search case insensitive.
 ^
@@ -39,7 +39,7 @@ The `\c` flag in search mode makes the search case insensitive.
     Roses are red.
     War of the roses.
     Guns & Roses.
-    Rose tinted glasses.
+    Rose garden.
     ^
 
 The `\?` flag in search mode makes the last item ( in this case a single letter ) optional.
@@ -51,5 +51,5 @@ The `\?` flag in search mode makes the last item ( in this case a single letter 
 `/` ( Search mode ) is a distinct mode in Vim, this means it has its own syntax and set of modifiers.
 ^
 
-8. Type `:noh` to clear the last search from the screen.
+8. Type `:noh<cr>` to clear the last search from the screen.
 ^
