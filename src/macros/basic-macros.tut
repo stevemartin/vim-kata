@@ -11,7 +11,7 @@ This will create a macro in the 'q' register. You could do `qa`, `qb` and so on 
 To stop recording the macro type `q` again.
 ^
 
-Consider the following in Vim.
+Consider the following in Vim ( but dont type the commands ... yet ).
 ^
 
 `28gg` Takes you to line 28
